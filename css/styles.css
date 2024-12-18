@@ -1,0 +1,89 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Inicio */
+#inicio {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo del texto */
+.container {
+    font-weight: bold;
+    position: relative; /* Necesario para usar pseudo-elementos */
+    overflow: hidden; /* Oculta el exceso del efecto */
+}
+
+/* Pseudo-elemento para el efecto dorado */
+.container::before {
+    content: ''; /* Elemento vacío */
+    position: absolute;
+    top: 0;
+    left: -100%; /* Comienza fuera del texto */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgb(36, 199, 199),rgb(194, 80, 188),rgb(34, 125, 177),rgb(36, 196, 121),rgb(206, 23, 23), transparent); /* Barrido dorado */
+    animation: barrido 20s linear infinite; /* Animación constante */   
+}
+
+/* Animación del barrido */
+@keyframes barrido {
+    100% {
+        left: 100%; /* Inicia fuera del texto */
+    }
+    100% {
+        left: 100%; /* Termina fuera del texto por el otro lado */
+    }
+}
+
+/* Sobre mí */
+#sobre-mi {
+    background: linear-gradient(to right, #343a40, #343a40);
+    background-color: #f8f9fa;
+    padding: 60px 0;
+    color: white;
+}
+
+/* Proyectos */
+#proyectos {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    padding: 60px 0;
+}
+
+.mb-4 {
+    color: white;
+}
+
+.row {
+    display: flex; /* Activa Flexbox */
+    justify-content: space-between; /* Espacio entre los div */
+    flex-wrap: nowrap; /* Evita que los div se muevan a una nueva línea */
+}
+
+#proyectos .row > div {
+    background: white;
+    padding: 10px;
+    margin: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Contacto */
+#contacto {
+    padding: 60px 0;
+    background-color: #343a40;
+    color: white;
+}
+
+#contacto a {
+    color: #ffc107;
+    text-decoration: none;
+}
